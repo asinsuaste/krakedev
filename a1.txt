@@ -1,1 +1,3 @@
-soy el erchivo a1
+soy el archivo a1
+
+he cambiado para bien soy un archivo sano

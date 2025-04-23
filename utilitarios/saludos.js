@@ -11,6 +11,14 @@ let Estatura=recuperarTexto("txtEstatura");
 let mensajeBienvenida= "Bienvenido "+nombre+" "+apellido;
 
 mostrarTexto("lblResultado", mensajeBienvenida);
+
+mostrarImagen("imgSaludo","./imagenes/homero.gif");
+}
+
+mostrarImagen=function(idComponente,rutaImagen){
+    let componente=document.getElementById(idComponente);
+    componente.src=rutaImagen;
+    return rutaImagen;
 }
 
 recuperarTexto=function(idComponente){

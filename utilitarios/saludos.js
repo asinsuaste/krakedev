@@ -6,7 +6,11 @@ let apellido=recuperarTexto("txtApellido");
 //Recuperar el valor de la caja de texto Edad
 let Edad=recuperarTexto("txtEdad");
 //Recuperar el valor de la caja de texto Estatura
-let aEstatura=recuperarTexto("txtEstatura");  
+let Estatura=recuperarTexto("txtEstatura"); 
+//Mostrar menjaje en pantalla
+let mensajeBienvenida= "Bienvenido "+nombre+" "+apellido;
+
+mostrarTexto("lblResultado", mensajeBienvenida);
 }
 
 recuperarTexto=function(idComponente){
@@ -27,4 +31,10 @@ recuperarInt=function(idComponente){
     let valorCaja=recuperarTexto(idComponente);
     let valorDecimal=parseFloat(valorCaja);
     return valorDecimal;
+}
+
+mostrarTexto=function(idComponente,mensaje){
+    let componente=document.getElementById(idComponente);
+    componente.innerText=mensaje;
+    return mensaje;
 }

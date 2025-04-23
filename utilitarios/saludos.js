@@ -13,6 +13,11 @@ let mensajeBienvenida= "Bienvenido "+nombre+" "+apellido;
 mostrarTexto("lblResultado", mensajeBienvenida);
 
 mostrarImagen("imgSaludo","./imagenes/homero.gif");
+
+mostrarTextoEnCaja("txtNombre","");
+mostrarTextoEnCaja("txtApellido","");
+mostrarTextoEnCaja("txtEdad","");
+mostrarTextoEnCaja("txtEstatura","");
 }
 
 mostrarImagen=function(idComponente,rutaImagen){
@@ -29,6 +34,7 @@ recuperarTexto=function(idComponente){
     return valorIngresado;
 }
 
+
 recuperarInt=function(idComponente){
     let valorCaja=recuperarTexto(idComponente);
     let valorEntero=parseInt(valorCaja);
@@ -44,5 +50,11 @@ recuperarInt=function(idComponente){
 mostrarTexto=function(idComponente,mensaje){
     let componente=document.getElementById(idComponente);
     componente.innerText=mensaje;
+    return mensaje;
+}
+
+mostrarTextoEnCaja=function(idComponente,mensaje){
+    let componente=document.getElementById(idComponente);
+    componente.value=mensaje;
     return mensaje;
 }

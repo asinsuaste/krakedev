@@ -9,7 +9,7 @@ jugar=function(){
     console.log(resultado);
    mostrarCara(resultado);
    modificarPuntos(resultado);
-   modificarLanzamientos(lanzamientos);
+   modificarLanzamientos();
 
 
 }
@@ -22,7 +22,6 @@ modificarPuntos=function(numero){
         cambiarTexto("lblMensaje","GANASTE");
         //Invocar a limpiar
         limpiar("");
-        limpiarMensaje("");
        
     }
 }
@@ -46,7 +45,10 @@ limpiar = function(){
     lanzamientos = 5;
 
     cambiarTexto("lblPuntos", puntos);
-    cambiarTexto("lblLanzamientos", lanzamientos); 
+    cambiarTexto("lblLanzamientos", lanzamientos);
+    cambiarTexto("lblMensaje", "");
+    cambiarImagen("imgDado","");
+   
 }
 
 

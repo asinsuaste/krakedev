@@ -20,8 +20,6 @@ modificarPuntos=function(numero){
     //si el jugador obtiene + de 20 puntos, mostrar un mensaje GANASTE
     if(puntos > 20){
         cambiarTexto("lblMensaje","GANASTE");
-        //Invocar a limpiar
-        limpiar("");
        
     }
 }
@@ -35,7 +33,8 @@ modificarLanzamientos=function(){
     //si el jugador obtiene 0 lanzamientos, mostrar un mensaje GAME OVER
     if(lanzamientos == 0 ){
         cambiarTexto("lblMensaje","GAME OVER");
-        //Invocar a limpiar 
+    }
+    if(lanzamientos == -1){
         limpiar();
     }
 }

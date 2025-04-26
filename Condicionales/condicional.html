@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="condicionales.js"></script>
+        <script src="utilitarios.js"></script>
+    </body>
+    <head>
+        <div>
+            <h1>1.-FUNCION TASA DE INTERES</h1>
+            <h3>Ingrese el Ingreso de su Empresa</h3>
+            <input type="text" id="txtIngresoEmpresa"/>
+            <input type="button" value="CALCULAR" onclick="calcularTasaInteres();"/>
+            <h3 id="lbltasaInteres"></h3>
+        </div>
+        <div>
+            <h1>2.-FUNCION CAPACIDAD DE PAGO</h1>
+            <h3>Ingrese Su Edad</h3>
+            <input type="text" id="txtEdad"/>
+            <h3>Ingrese su Ingreso</h3>
+            <input type="text" id="txtIngreso"/>
+            <h3>Ingrese sus Egresos</h3>
+            <input type="text" id="txtEgreso"/>
+            <input type="button" value="CUOTA MENSUAL" onclick="calcularCapacidadPago();"/>
+            <h3 id="lblCuotaMensual"></h3>  
+        </div>
+        <div>
+            <h1>3.-FUNCION DESCUENTO</h1>
+            <h3>Ingrese la Cantidad</h3>
+            <input type="text" id="txtCantidad"/>
+            <h3>Ingrese el Precio</h3>
+            <input type="text" id="txtPrecio"/>
+            <input type="button" value="CUOTA MENSUAL" onclick="calcularDescuento();"/>
+            <h3 id="lblTotal"></h3>  
+        </div>
+        <div>
+            <h1>4.FUNCION DETERMINAR COLESTEROL</h1>
+            <h3>Ingrese su Edad</h3>
+            <input type="text" id="txtEdadColesterol"/>
+            <input type="button" value="CALCULAR" onclick="determinarColesterolLDL();"/>
+            <h3 id="lblColesterol"></h3> 
+        </div>
+            <h1>5.-FUNCION VALIDAR CLAVE</h1>
+            <h3>Ingrese Su Usuasrio</h3>
+            <input type="text" id="txtUsuasrio"/>
+            <h3>Ingrese Su Contraseña</h3> 
+            <input type="text" id="txtClave"/>
+            <input type="button" value="ENTRAR" onclick="validarClave();"/>
+            <h3 id="lblClave"></h3> 
+        <div>
+            <h1>6.-FUNCION ES MAYUSCULA</h1>
+            <h3>Ingrese una Letra</h3>
+            <input type="text" id="txtMayuscula"/>
+            <input type="button" value="MAYUSCULA" onclick="esMayuscula();"/>
+            <h3 id="lblMayuscula"></h3> 
+        </div>
+        <div>
+            <h1>6.-FUNCION ES MINUSCULA</h1>
+            <h3>Ingrese una Letra</h3>
+            <input type="text" id="txtMinuscula"/>
+            <input type="button" value="MINUSCULA" onclick="esMinuscula();"/>
+            <h3 id="lblMinuscula"></h3> 
+        </div>
+        <div>
+            <h1>7.-FUNCION ES DIGITO</h1>
+            <h3>Ingrese un Digito o Simbolo</h3>
+            <input type="text" id="txtDigito"/>
+            <input type="button" value="DIGITO" onclick="esDigito();"/>
+            <h3 id="lblDigito"></h3> 
+        <div>
+            <h1>2.-FUNCION DAR PERMISO</h1>
+            <h3>Nota de Matematicas</h3>
+            <input type="text" id="txtMatematicas"/>
+            <h3>Nota de Fisica</h3>
+            <input type="text" id="txtFisica"/>
+            <h3>Nota de Geometria</h3>
+            <input type="text" id="txtGeometria"/>
+            <input type="button" value="Le dan Permiso?" onclick="darPermiso();"/>
+            <h3 id="lblDarPermiso"></h3>  
+        <div>
+            <h1>2.-FUNCION OTORGAR PERMISO</h1>
+            <h3>Nota de Matematicas</h3>
+            <input type="text" id="txtMate"/>
+            <h3>Nota de Fisica</h3>
+            <input type="text" id="txtFisi"/>
+            <h3>Nota de Geometria</h3>
+            <input type="text" id="txtGeo"/>
+            <input type="button" value="Le Otorgan Permiso?" onclick="otorgarPermiso();"/>
+            <h3 id="lblOtorgarPermiso"></h3>
+        <div>
+            <h1>2.-FUNCION DEJAR SALIR</h1>
+            <h3>Nota de Matematicas</h3>
+            <input type="text" id="txtMatematicas1"/>
+            <h3>Nota de Fisica</h3>
+            <input type="text" id="txtFisica2"/>
+            <h3>Nota de Geometria</h3>
+            <input type="text" id="txtGeometria3"/>
+            <input type="button" value="Le Dejan Salir?" onclick="dejarSalir();"/>
+            <h3 id="lblDejarSalir"></h3>  
+        <div>
+        </div>
+        </div>
+    </head>
+</html> 

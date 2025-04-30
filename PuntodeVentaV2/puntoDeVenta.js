@@ -56,7 +56,7 @@ esProductoValido = function (producto, idComponenteError) {
     }
 
     if (numeroLetras > 10) {
-        mostrarTexto(idComponenteError, "EL NOMBRE DEL PRODUCTO NO PUEDE TENER MÁS DE 10 CARACTERES");
+        mostrarTexto(idComponenteError, "EL NOMBRE DEL PRODUCTO NO PUEDE TENER MAS DE 10 CARACTERES");
         return false;
     }
 

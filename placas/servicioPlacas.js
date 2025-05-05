@@ -100,85 +100,161 @@ validarEstructura = function (placa) {
 
 obtenerProvincia=function(placa){
    let cmpProvincia;
-   let hayError = false;
 
    placa=recuperarTexto("txtPlaca");
    cmpProvincia=placa.charCodeAt(0);
    if(cmpProvincia == 65){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DEL AZUAY");
-      
-   } if(cmpProvincia == 66){
+      return;
+   }else if(cmpProvincia == 66){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE BOLIVAR");
-       
+       return;
    }else if(cmpProvincia == 85){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE CAÑAR");
-      
+       return;
    }else if(cmpProvincia == 67){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE CARCHI");
-     
+       return;
    }else if(cmpProvincia == 88){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE COTOPAXI");
-       
+       return;
    }else if(cmpProvincia == 72){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE CHIMBORAZO");
-         
-   }
-   if(cmpProvincia == 79){
+       return;
+   }else if(cmpProvincia == 79){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DEL ORO ");
-      
+       return;
    }else if(cmpProvincia == 69){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE ESMERALDAS");
-      
+       return;
    }else if(cmpProvincia == 87){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE GALAPAGOS");
-       
+       return;
    }else if(cmpProvincia == 71){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE GUAYAS");
-      
+       return;
    }else if(cmpProvincia == 73){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE IBARRA");
-      
+       return;
    }else if(cmpProvincia == 76){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE LOJA");
-       
+       return;
    }else if(cmpProvincia == 82){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE LOS RIOS");
-      
+       return;
    }else if(cmpProvincia == 77){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE MANABI");
-       
+       return;
    }else if(cmpProvincia == 86){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE MORONA SANTIAGO");
-       
+       return;
    }else if(cmpProvincia == 78){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE NAPO");
-      
+       return;
    }else if(cmpProvincia == 83){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE PASTAZA");
-       
+       return;
    }else if(cmpProvincia == 80){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE PICHINCHA");
-      
+       return;
    }else if(cmpProvincia == 75){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE SUCUMBIOS");
-       
+       return;
    }else if(cmpProvincia == 81){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE ORELLANA");
-       
-   }
-   if(cmpProvincia == 84){
+       return;
+   }else if(cmpProvincia == 84){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE TUNGURAHUA");
-       
+       return;
    }else if(cmpProvincia == 90){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE ZAMORA CHINCHIPE");
-       
+       return;
    }else if(cmpProvincia == 89){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE SANTA HELENA");
-      
+       return;
    }else if(cmpProvincia == 74){
        mostrarTexto("lblProvincia","PERTENECE A LA PROVINCIA DE SANTO DOMINGO DE LOS TSACHILAS");
-      
+       return;
    }else {
        mostrarTexto("lblProvincia", "PROVINCIA INCORRECTA");
    } 
 }
+
+obtenerVehiculo=function(placa){
+    let cmpVehiculo;
+
+   placa=recuperarTexto("txtPlaca");
+   cmpVehiculo=placa.charCodeAt(1);
+
+   if(cmpVehiculo == 65 || cmpVehiculo == 90){
+        mostrarTexto("lblVehiculo","LA PLACA PERTENECE A VEHICULOS COMERCIALES COMO TAXIS O AUTOBUSES");
+        return;
+    }else if(cmpVehiculo == 88){
+        mostrarTexto("lblVehiculo","LA PLACA PERTENECE A UN VEHICULO DE USO OFICIAL");
+        return;
+    }else if(cmpVehiculo == 69 ){
+        mostrarTexto("lblVehiculo","LA PLACA PERTENECE A VEHICULOS GUBERNAMENTALES");
+        return;
+    }else if(cmpVehiculo == 83 ){
+        mostrarTexto("lblVehiculo","LA PLACA PERTENECE A VEHICULOS DEL GOBIERNO PROVINCIAL");
+        return;
+    }else if(cmpVehiculo == 77 ){
+        mostrarTexto("lblVehiculo","LA PLACA PERTENECE A VEHICULOS MUNICIPALES");
+        return;
+    }else if(cmpVehiculo >=66 && cmpVehiculo <= 68 && cmpVehiculo >= 70 && cmpVehiculo <= 76 && cmpVehiculo >= 78 && cmpVehiculo <= 89){
+        mostrarTexto("lblVehiculo","LA PLACA PERTENECE A UN VEHICULO PARTICULAR(PRIVADO)");
+        return;
+    }else{
+        mostrarTexto("lblVehiculo", "VEHICULO INCORRECTO");
+    }
+
+}
+
+obtenerDia=function(placa){
+    let cmpPicoYPlaca;
+
+    placa=recuperarTexto("txtPlaca");
+    cmpPicoYPlaca=placa.charCodeAt(7);
+
+    if(cmpPicoYPlaca == 49 || cmpPicoYPlaca == 50){
+        mostrarTexto("lblPicoYP","EL VEHICULO NO PUEDE CIRCULAR LOS DIAS LUNES");
+        return;
+    }else if(cmpPicoYPlaca == 51 || cmpPicoYPlaca == 52){
+        mostrarTexto("lblPicoYP","EL VEHICULO NO PUEDE CIRCULAR LOS DIAS MARTES");
+        return;
+    }else if(cmpPicoYPlaca == 53 || cmpPicoYPlaca == 54){
+        mostrarTexto("lblPicoYP","EL VEHICULO NO PUEDE CIRCULAR LOS DIAS MIERCOLES");
+        return;
+    }else if(cmpPicoYPlaca == 55 || cmpPicoYPlaca == 56){
+        mostrarTexto("lblPicoYP","EL VEHICULO NO PUEDE CIRCULAR LOS DIAS JUEVES");
+        return;
+    }else if(cmpPicoYPlaca == 57 || cmpPicoYPlaca == 48){
+        mostrarTexto("lblPicoYP","EL VEHICULO NO PUEDE CIRCULAR LOS DIAS VIERNES");
+        return;
+        }else{
+            mostrarTexto("lblPicoYP","");
+        }
+    }
+
+    limpiar=function(){
+
+       let caja1=mostrarTexto("lblProvincia","");
+       let caja2=mostrarTexto("lblVehiculo","");
+       let caja3=mostrarTexto("lblEstructura","");
+       let caja4=mostrarTexto("lblCaracteres","");
+       let caja5=mostrarTexto("lblMayuscula1","");
+       let caja6=mostrarTexto("lblMayuscula2","");
+       let caja7=mostrarTexto("lblMayuscula3","");
+       let caja8=mostrarTexto("lblGion","");
+       let caja9=mostrarTexto("lblDigito1","");
+       let caja10=mostrarTexto("lblDigito2","");
+       let caja11=mostrarTexto("lblDigito3","");
+       let caja12=mostrarTexto("lblDigito4","");
+       let caja13=mostrarTexto("lblPicoYP","");
+
+        let valorInicial;
+        let componente;
+        componente=document.getElementById("txtPlaca");
+        valorInicial=componente.value="";
+        return valorInicial;
+    }

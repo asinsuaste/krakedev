@@ -1,16 +1,14 @@
 validarPlaca=function(){
     placa=recuperarTexto("txtPlaca");
     let erroresEstructura;
-    erroresEstructura=validarEstructura();
+    erroresEstructura=validarEstructura(placa);
 
 
     if(erroresEstructura == null){
         mostrarTexto("lblEstructura","ESTRUCTURA VALIDA");
-        if(obtenerProvincia(placa) == null){
-            
-        }else{
-            mostrarTexto("lblProvincia","PROVINCIA INCORRECTA");
-        }
+        obtenerProvincia(placa);
+        obtenerVehiculo(placa);
+        obtenerDia(placa);
     }else{
         mostrarTexto("lblEstructura","ESTRUCTURA INCORRECTA");
     }

@@ -17,8 +17,6 @@ numeroCaracteres=function(idComponente){
     return cmpLetra;
 }
 
-
-
 esMayuscula = function(caracter) {
     if (caracter >= 65 && caracter <= 90) {
         return true;
@@ -37,7 +35,7 @@ esGion = function (idComponente) {
     return true,false;
 }
 
-esNumero = function (idComponente,mensaje) {
+esNumero = function (idComponente,) {
     if (idComponente >= 48 && idComponente <= 57) {
         return true;
     } else {
@@ -45,3 +43,5 @@ esNumero = function (idComponente,mensaje) {
     }
     return true,false;
 }
+
+

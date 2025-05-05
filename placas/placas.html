@@ -11,7 +11,8 @@
                 <div class="titulo">INGRESE NUMERO DE PLACA</div>
                     <input class="caja" type="text" id="txtPlaca" />
                 <div class="botones">
-                            <input class="estiloBoton" type="button" value="VALIDAR" onclick="obtenerProvincia();"/>
+                            <input class="estiloBoton" type="button" value="VALIDAR" onclick="validarPlaca();"/>
+                            <input class="estiloBoton" type="button" value="LIMPIAR" onclick="limpiar();"/>
                                 <div class="contenedorBoton"></div>
                     </div>
                 </div>  
@@ -20,6 +21,7 @@
                 </div>
                 <div class="colorResultado">
                     <div id="lblProvincia"></div>
+                    <div id="lblVehiculo"></div>
                     <div id="lblEstructura"></div>
                     <div id="lblCaracteres"></div>
                     <div id="lblMayuscula1"></div>
@@ -30,6 +32,7 @@
                     <div id="lblDigito2"></div>
                     <div id="lblDigito3"></div>
                     <div id="lblDigito4"></div>
+                    <div id="lblPicoYP"></div>
                 </div>
         </body>
     </html>

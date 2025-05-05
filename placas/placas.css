@@ -1,0 +1,72 @@
+body{
+    background-color: white;
+    background-image: url("carroNoche.png");
+    background-repeat:repeat;
+    background-size: cover;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.titulo{
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+.caja{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    margin-left: 625px;
+    margin-right: 625px;
+    border-radius: 300px;
+    flex-direction: row;
+    justify-content: center;
+}
+.estiloBoton{
+    background-color: gray; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+.ingresoDatos{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.areaResultado{
+    display: flex;
+    color: white;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorResultado{
+    display: flex;
+    color: white;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+

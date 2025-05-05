@@ -19,31 +19,31 @@ numeroCaracteres=function(idComponente){
 
 
 
-esMayuscula = function(caracter, mensaje) {
+esMayuscula = function(caracter) {
     if (caracter >= 65 && caracter <= 90) {
-        mostrarTexto(mensaje,true);
+        return true;
     } else {
-        mostrarTexto(mensaje,false);
+        return false;
     }
     return true,false;
 }
 
 esGion = function (idComponente) {
     if (idComponente == 45 || idComponente == 95) {
-        mostrarTexto("lblGion", true);
+        return true;
     } else {
-        mostrarTexto("lblGion", false);
+        return false;
     }
-    return true, false;
+    return true,false;
 }
 
 esNumero = function (idComponente,mensaje) {
     if (idComponente >= 48 && idComponente <= 57) {
-        mostrarTexto(mensaje, true);
+        return true;
     } else {
-        mostrarTexto(mensaje, false);
+        return false;
     }
-    return true, false;
+    return true,false;
 }
 
 

@@ -4,12 +4,12 @@ validarPlaca=function(){
     erroresEstructura=validarEstructura();
 
 
-    if(erroresEstructura === null){
+    if(erroresEstructura == null){
         mostrarTexto("lblEstructura","ESTRUCTURA VALIDA");
-        if(provincia === null){
-            obtenerProvincia();
+        if(obtenerProvincia(placa) == null){
+            
         }else{
-            mostrarTexto("lblEstructura","PROVINCIA INCORRECTA");
+            mostrarTexto("lblProvincia","PROVINCIA INCORRECTA");
         }
     }else{
         mostrarTexto("lblEstructura","ESTRUCTURA INCORRECTA");

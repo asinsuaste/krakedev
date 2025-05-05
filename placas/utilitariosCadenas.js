@@ -45,5 +45,3 @@ esNumero = function (idComponente,mensaje) {
     }
     return true,false;
 }
-
-

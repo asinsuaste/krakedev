@@ -4,7 +4,6 @@ let puntosComputador=0;
 modificarPuntosUsuario=function(){
     puntosUsuario=puntosUsuario+1;
     cambiarTexto("lblMensajeJugador", puntosUsuario);
-    //si el jugador obtiene + de 20 puntos, mostrar un mensaje GANASTE
     if(puntosUsuario == 5){
         cambiarTexto("lblMensajeJugador","HAS GANADO EL JUEGO");
        
@@ -14,7 +13,6 @@ modificarPuntosUsuario=function(){
 modificarPuntosComputador=function(){
     puntosComputador=puntosComputador+1;
     cambiarTexto("lblMensajeComputador", puntosComputador);
-    //si el jugador obtiene + de 20 puntos, mostrar un mensaje GANASTE
     if(puntosComputador == 5){
         cambiarTexto("lblMensajeComputador","EL COMPUTADOR TE HA VENCIDO");
        
@@ -34,7 +32,6 @@ limpiar = function(){
 jugar = function(seleccionado) {
     let computador = generarElemento();
   
-    // Mostrar imagen del jugador
     if (seleccionado == "Piedra") {
       mostrarImagen("imgJugador", "./imagenes/piedra.png");
     } else if (seleccionado == "Papel") {

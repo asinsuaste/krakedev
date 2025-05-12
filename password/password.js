@@ -1,7 +1,7 @@
 ejecutarValidacion = function() {
     let mensaje = recuperarTexto("txtPassword");
 
-    if (mensaje === "") {
+    if (mensaje == "") {
         mostrarTexto("lblError1", "INGRESE SU CLAVE POR FAVOR");
         return;
     } else {

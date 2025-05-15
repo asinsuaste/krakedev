@@ -85,10 +85,6 @@ tbody tr:nth-child(odd) {
   tbody tr:nth-child(even) {
     background-color: lightblue;
   }
-  
-  tbody tr {
-    background-image: url(noise.png);
-  }
 
    tbody tr:hover{
     background-color: lightgoldenrodyellow;

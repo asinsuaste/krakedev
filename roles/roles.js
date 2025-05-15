@@ -7,21 +7,55 @@ let empleados = [
 
 let esNuevo = false;
 
-ejecutarBusqueda=function(){
-    let valorCedula=recuperarTexto("txtBusquedaCedula");
-    let empleado=buscarCliente(valorCedula)
-    if(empleado == null){
-        alert("Empleado No Existe");
-    }else{
-        mostrarTextoEnCaja("txtCedula",empleado.cedula);
-        mostrarTextoEnCaja("txtNombre",empleado.nombre);
-        mostrarTextoEnCaja("txtEdad",empleado.edad);
-        mostrarTextoEnCaja("txtSueldo",empleado.sueldo);
-        habilitarComponente("txtNombre");
-        habilitarComponente("txtNombre");
-        habilitarComponente("txtNombre");
-        deshabilitarComponente("txtCedula");
+limpiar=function(){
+    mostrarTexto("txtCedula","");
+    mostrarTexto("txtNombre","");
+    mostrarTexto("txtApellido","");
+    mostrarTexto("txtSueldo","");
+    esNuevo=false;
+    deshabilitarElementos("txtCedula");
+    deshabilitarElementos("txtNombre");
+    deshabilitarElementos("txtApellido");
+    deshabilitarElementos( "txtSueldo");
+    deshabilitarElementos("btnGuardar");
+
+}
+
+ejecutarBusqueda = function () {
+    let valorCedula = recuperarTexto("txtBusquedaCedula");
+
+    if (valorCedula === "") {
+        alert("Por favor ingrese una cédula antes de buscar");
+        return;
     }
+
+    let empleado = buscarEmpleado(valorCedula);
+
+    if (empleado == null) {
+        alert("Empleado No Existe");
+    } else {
+        mostrarTextoEnCaja("txtCedula", empleado.cedula);
+        mostrarTextoEnCaja("txtNombre", empleado.nombre);
+        mostrarTextoEnCaja("txtApellido", empleado.apellido);
+        mostrarTextoEnCaja("txtSueldo", empleado.sueldo);
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        deshabilitarComponente("btnGuardar");
+    }
+}
+
+buscarEmpleado = function (cedula) {
+    let elementoEmpleado;
+    let empleadoEncontrado = null;
+    for (let i = 0; i < empleados.length; i++) {
+        elementoEmpleado = empleados[i];
+        if (elementoEmpleado.cedula === cedula) {
+            empleadoEncontrado = elementoEmpleado;
+            break;
+        }
+    }
+    return empleadoEncontrado;
 }
 
 guardar = function () {
@@ -82,20 +116,26 @@ guardar = function () {
         empleadoExistente.apellido = valorApellido;
         empleadoExistente.sueldo = valorSueldo;
         
-        alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+        alert("Empleado Modificado Exitosamente");
         mostrasEmpleados();
         modificadorDeId();
         
         // Deshabilitar las cajas de texto y el botón de guardar
-        deshabilitarElementos(["txtCedula", "txtNombre", "txtApellido", "txtSueldo", "btnGuardar"]);
-    } else {
+        deshabilitarElementos("txtCedula");
+        deshabilitarElementos("txtNombre");
+        deshabilitarElementos("txtApellido");
+        deshabilitarElementos( "txtSueldo");
+        deshabilitarElementos("btnGuardar");
+
+        } else if(empleadoExistente == empleado){
+        alert("Ya Existe Un EempleadoO Con La Cedula " + valorCedula);
+        }
+        } else {
             let empleado = {
                 cedula: valorCedula,
                 nombre: valorNombre,
                 apellido: valorApellido,
                 sueldo: valorSueldo
-            };
-            alert("Ya Existe Un EempleadoO Con La Cedula " + valorCedula);
         }
     }
 }
@@ -116,25 +156,10 @@ agregarEmpleado = function(empleado) {
         empleados.push(empleado); 
         return true;
     } else {
-        alert("Ya existe ese Empleado con la Cedula " + empleado.cedula);
         return false;
     }
 }
 
-
-
-buscarEmpleado=function(cedula){
-    let elementoEmpleado;
-    let empleadoEncontrado = null;
-    for ( let i=0; i < empleados.length ; i++ ){
-        elementoEmpleado=empleados[i];
-        if (elementoEmpleado.cedula == cedula){
-            empleadoEncontrado=elementoEmpleado;
-            break;
-        }
-    }
-        return empleadoEncontrado;
-}
 
 ejecutarNuevo=function(){
     let cedula = "txtCedula";

@@ -8,23 +8,23 @@ let empleados = [
 let esNuevo = false;
 
 limpiar=function(){
-    mostrarTexto("txtCedula","");
-    mostrarTexto("txtNombre","");
-    mostrarTexto("txtApellido","");
-    mostrarTexto("txtSueldo","");
+    mostrarTextoEnCaja("txtCedula"," ");
+    mostrarTextoEnCaja("txtNombre"," ");
+    mostrarTextoEnCaja("txtApellido"," ");
+    mostrarTextoEnCaja("txtSueldo"," ");
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente( "txtSueldo");
+    deshabilitarComponente("btnGuardar");
     esNuevo=false;
-    deshabilitarElementos("txtCedula");
-    deshabilitarElementos("txtNombre");
-    deshabilitarElementos("txtApellido");
-    deshabilitarElementos( "txtSueldo");
-    deshabilitarElementos("btnGuardar");
 
 }
 
 ejecutarBusqueda = function () {
     let valorCedula = recuperarTexto("txtBusquedaCedula");
 
-    if (valorCedula === "") {
+    if (valorCedula == " ") {
         alert("Por favor ingrese una cédula antes de buscar");
         return;
     }
@@ -50,7 +50,7 @@ buscarEmpleado = function (cedula) {
     let empleadoEncontrado = null;
     for (let i = 0; i < empleados.length; i++) {
         elementoEmpleado = empleados[i];
-        if (elementoEmpleado.cedula === cedula) {
+        if (elementoEmpleado.cedula == cedula) {
             empleadoEncontrado = elementoEmpleado;
             break;
         }
@@ -121,11 +121,11 @@ guardar = function () {
         modificadorDeId();
         
         // Deshabilitar las cajas de texto y el botón de guardar
-        deshabilitarElementos("txtCedula");
-        deshabilitarElementos("txtNombre");
-        deshabilitarElementos("txtApellido");
-        deshabilitarElementos( "txtSueldo");
-        deshabilitarElementos("btnGuardar");
+        deshabilitarComponente("txtCedula");
+        deshabilitarComponente("txtNombre");
+        deshabilitarComponente("txtApellido");
+        deshabilitarComponente( "txtSueldo");
+        deshabilitarComponente("btnGuardar");
 
         } else if(empleadoExistente == empleado){
         alert("Ya Existe Un EempleadoO Con La Cedula " + valorCedula);

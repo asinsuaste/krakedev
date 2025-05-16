@@ -229,7 +229,6 @@ mostrarOpcionResumen=function(){
     if ( mostrarComponente(resumen) == mostrarComponente(resumen) ){
         ocultarComponente(empleado);
         ocultarComponente(rol);
-        deshabilitarComponente();
     }
 }
 
@@ -350,6 +349,7 @@ guardarRol = function () {
     deshabilitarComponente("btnGuardarRol");
 
     mostrarRoles();
+    mostrarTotales();
 }
 
 mostrarRoles=function(){
@@ -373,5 +373,27 @@ mostrarRoles=function(){
     }
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
+
+}
+
+mostrarTotales = function () {
+    let totalEmpleado = 0;
+    let totalEmpleador = 0;
+    let totalAPagar = 0;
+
+    for (let i = 0; i < roles.length; i++) {
+        let rol = roles[i];
+        totalEmpleado += rol.aporteEmpleado;
+        totalEmpleador += rol.aporteEmpleador;
+        totalAPagar += rol.valorAPagar;
+    }
+
+    let totalNomina = totalEmpleado + totalEmpleador + totalAPagar;
+
+    // Mostrar en pantalla
+    mostrarTexto("infoAporteEmpleado", totalEmpleado.toFixed(2));
+    mostrarTexto("infoAporteEmpresa", totalEmpleador.toFixed(2));
+    mostrarTexto("infoTotalPago", totalAPagar.toFixed(2));
+    mostrarTexto("infoAporteNomina", totalNomina.toFixed(2));
 
 }

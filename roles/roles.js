@@ -397,3 +397,5 @@ mostrarTotales = function () {
     mostrarTexto("infoAporteNomina", totalNomina.toFixed(2));
 
 }
+
+//kenny

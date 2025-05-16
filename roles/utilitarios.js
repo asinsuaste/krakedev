@@ -61,3 +61,18 @@ todosMayusculas = function(cadena) {
     }
     return true;
 }
+
+recuperarFloatDiv = function(idComponente) {
+    let texto = recuperarTextoDiv(idComponente);
+    return parseFloat(texto);
+}
+
+recuperarIntDiv = function(idComponente) {
+    let texto = recuperarTextoDiv(idComponente);
+    return parseInt(texto);
+}
+
+recuperarTextoDiv = function(idComponente) {
+    let componente = document.getElementById(idComponente);
+    return componente.textContent;
+}

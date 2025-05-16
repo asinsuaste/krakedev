@@ -5,6 +5,8 @@ let empleados = [
     {cedula:"1714225107",nombre:"Lourdes",apellido:"Campo",sueldo:900.0}
 ];
 
+let roles = [];
+
 let esNuevo = false;
 
 limpiar=function(){
@@ -219,18 +221,6 @@ mostrasEmpleados=function(){
 
 }
 
-
-mostrarOpcionRol=function(){
-    let empleado = "divEmpleado";
-    let rol = "divRol";
-    let resumen = "divResumen";
-
-    if ( mostrarComponente(rol) == mostrarComponente(rol) ){
-        ocultarComponente(empleado);
-        ocultarComponente(resumen);
-    }
-}
-
 mostrarOpcionResumen=function(){
     let empleado = "divEmpleado";
     let rol = "divRol";
@@ -239,6 +229,7 @@ mostrarOpcionResumen=function(){
     if ( mostrarComponente(resumen) == mostrarComponente(resumen) ){
         ocultarComponente(empleado);
         ocultarComponente(rol);
+        deshabilitarComponente();
     }
 }
 
@@ -275,12 +266,112 @@ calcularRol = function() {
 
     if (isNaN(descuento) || (descuento < 0 || descuento > sueldo)) {
         alert("El descuento debe ser un numero valido entre 0 y el sueldo del empleado");
+        deshabilitarComponente("btnGuardarRol");
         return;
     }
 
     let aporte = calcularAporteEmpleado(sueldo);
     let valorPagar = calcularValorAPagar(sueldo, aporte, descuento);
-
     mostrarTexto("infoIESS", aporte.toFixed(2));
     mostrarTexto("infoPago", valorPagar.toFixed(2));
+
+        habilitarComponente("btnGuardarRol");
+
+}
+mostrarOpcionRol=function(){
+    let empleado = "divEmpleado";
+    let rol = "divRol";
+    let resumen = "divResumen";
+    let guardar = "btnGuardarRol";
+
+    if ( mostrarComponente(rol) == mostrarComponente(rol) ){
+        ocultarComponente(empleado);
+        ocultarComponente(resumen);
+        deshabilitarComponente(guardar);
+        mostrarRoles();
+    }
+}
+
+buscarRol = function(cedula) {
+    for (let i = 0; i < roles.length; i++) {
+        if (roles[i].cedula === cedula) {
+            return roles[i];
+        }
+    }
+    return null;
+}
+
+ agregarRol = function(rol) {
+    let existente = buscarRol(rol.cedula);
+    if (existente == null) {
+        roles.push(rol);
+        alert("Rol agregado correctamente");
+    } else {
+        alert("Ya existe un rol para esta cedula");
+    }
+}
+
+calcularAporteEmpleador = function(sueldo) {
+    return sueldo * 0.1115;
+}
+
+guardarRol = function () {
+    // Recuperar datos de pantalla
+    let cedula = recuperarTextoDiv("infoCedula");
+    let nombre = recuperarTextoDiv("infoNombre");
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let aporteEmpleado = recuperarFloatDiv("infoIESS");
+    let valorPagar = recuperarFloatDiv("infoPago");
+
+    // Validacion basica por si alguno de los valores es invalido
+    if (isNaN(sueldo) || isNaN(aporteEmpleado) || isNaN(valorPagar) || cedula === "" || nombre === "") {
+        alert("No se puede guardar el rol. Verifique que todos los datos esten completos y validos.");
+        return;
+    }
+
+    // Calcular aporte del empleador
+    let aporteEmpleador = calcularAporteEmpleador(sueldo);
+
+    // Crear objeto rol
+    let rol = {
+        cedula: cedula,
+        nombre: nombre,
+        sueldo: sueldo,
+        valorAPagar: valorPagar,
+        aporteEmpleado: aporteEmpleado,
+        aporteEmpleador: aporteEmpleador
+    };
+
+    // Agregar al arreglo
+    agregarRol(rol);
+
+    // Mostrar mensaje y deshabilitar botón
+    alert("Rol guardado correctamente.");
+    deshabilitarComponente("btnGuardarRol");
+
+    mostrarRoles();
+}
+
+mostrarRoles=function(){
+    let cmpTabla = document.getElementById("tablaRol");
+    let contenidoTabla = "<table><tr>" +
+        "<th>CEDULA</th>"+
+        "<th>NOMBRE</th>"+
+        "<th>VALOR A PAGAR</th>"+
+        "<th>APORTE EMPLEADO</th>"+
+        "<th>APORTE EMPLEADOR</th>"+
+        "</tr>";
+    for (let i = 0; i < roles.length; i++) {
+        let rol = roles[i];
+        contenidoTabla += "<tr>" +
+            "<td>" + rol.cedula + "</td>" +
+            "<td>" + rol.nombre + "</td>" +
+            "<td>" + rol.valorAPagar.toFixed(2) + "</td>" +
+            "<td>" + rol.aporteEmpleado.toFixed(2) + "</td>" +
+            "<td>" + rol.aporteEmpleador.toFixed(2) + "</td>" +
+            "</tr>";
+    }
+    contenidoTabla += "</table>";
+    cmpTabla.innerHTML = contenidoTabla;
+
 }

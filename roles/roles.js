@@ -27,7 +27,7 @@ ejecutarBusqueda = function () {
     let valorCedula = recuperarTexto("txtBusquedaCedula");
 
     if (valorCedula == " ") {
-        alert("Por favor ingrese una cédula antes de buscar");
+        alert("Por favor ingrese una cedula antes de buscar");
         return;
     }
 
@@ -70,28 +70,28 @@ function guardar() {
 
     // Validaciones
     if (valorCedula.toString().length !== 10 || isNaN(valorCedula)) {
-        mostrarTexto("lblErrorCedula", "La cedula debe tener 10 dígitos");
+        mostrarTexto("lblErrorCedula", "La cedula debe tener 10 digitos");
         hayErrores = true;
     } else {
         mostrarTexto("lblErrorCedula", " ");
     }
 
     if (valorNombre.length < 3 || !todosMayusculas(valorNombre)) {
-        mostrarTexto("lblErrorNombre", "El nombre debe tener al menos 3 caracteres en mayúsculas");
+        mostrarTexto("lblErrorNombre", "El nombre debe tener al menos 3 caracteres en mayusculas");
         hayErrores = true;
     } else {
         mostrarTexto("lblErrorNombre", " ");
     }
 
     if (valorApellido.length < 3 || !todosMayusculas(valorApellido)) {
-        mostrarTexto("lblErrorApellido", "El apellido debe tener al menos 3 caracteres en mayúsculas");
+        mostrarTexto("lblErrorApellido", "El apellido debe tener al menos 3 caracteres en mayusculas");
         hayErrores = true;
     } else {
         mostrarTexto("lblErrorApellido", " ");
     }
 
     if (isNaN(valorSueldo) || valorSueldo < 400 || valorSueldo > 5000) {
-        mostrarTexto("lblErrorSueldo", "El sueldo debe ser un número entre 400 y 5000");
+        mostrarTexto("lblErrorSueldo", "El sueldo debe ser un numero entre 400 y 5000");
         hayErrores = true;
     } else {
         mostrarTexto("lblErrorSueldo", " ");
